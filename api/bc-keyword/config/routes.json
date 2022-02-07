@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bc-keywords",
+      "handler": "bc-keyword.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bc-keywords/count",
+      "handler": "bc-keyword.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bc-keywords/:id",
+      "handler": "bc-keyword.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bc-keywords",
+      "handler": "bc-keyword.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bc-keywords/:id",
+      "handler": "bc-keyword.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bc-keywords/:id",
+      "handler": "bc-keyword.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

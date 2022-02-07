@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bc-modules",
+      "handler": "bc-module.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bc-modules/count",
+      "handler": "bc-module.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bc-modules/:id",
+      "handler": "bc-module.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bc-modules",
+      "handler": "bc-module.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bc-modules/:id",
+      "handler": "bc-module.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bc-modules/:id",
+      "handler": "bc-module.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

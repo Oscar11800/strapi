@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bc_modules",
+  "info": {
+    "name": "bcModule",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "embedLink": {
+      "type": "string"
+    },
+    "customIFrameStyle": {
+      "type": "boolean"
+    },
+    "metaThumbLink": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "metaDifficulty": {
+      "type": "enumeration",
+      "enum": [
+        "easy",
+        "medium",
+        "difficult"
+      ]
+    },
+    "markdown": {
+      "type": "text"
+    },
+    "bc_keywords": {
+      "collection": "bc-keyword",
+      "via": "bc_modules",
+      "dominant": true
+    },
+    "bcExercise": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bc-exercises.bc-exercise"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_bc_exercises_bc_exercises",
+  "info": {
+    "name": "bcExercise",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "mc",
+        "tf"
+      ]
+    },
+    "exercisePrompt": {
+      "type": "string"
+    },
+    "tfAnswer": {
+      "type": "boolean"
+    },
+    "bcMCOption": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bc-mc-options.bc-mc-option"
+    }
+  }
+}

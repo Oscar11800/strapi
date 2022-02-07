@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/users/{id}/time-capsules": {
+    "/bc-modules": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,19 +52,9 @@
         },
         "summary": "",
         "tags": [
-          "Time-capsule"
+          "Bc-module"
         ],
         "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "_limit",
             "in": "query",
@@ -203,6 +193,196 @@
           }
         ]
       },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bc-module"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBc-module"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bc-modules/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bc-module"
+        ],
+        "parameters": []
+      }
+    },
+    "/bc-modules/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bc-module"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -254,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Time-capsule"
+          "Bc-module"
         ],
         "requestBody": {
           "description": "",
@@ -262,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTime-capsule"
+                "$ref": "#/components/schemas/NewBc-module"
               }
             }
           }
@@ -328,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Time-capsule"
+          "Bc-module"
         ],
         "parameters": [
           {
@@ -343,135 +523,11 @@
           }
         ]
       }
-    },
-    "/users/time-capsules/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Time-capsule"
-        ],
-        "parameters": []
-      }
-    },
-    "/users/time-capsules": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Time-capsule"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewTime-capsule"
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
-      "Time-capsule": {
+      "Bc-module": {
         "required": [
           "id"
         ],
@@ -479,136 +535,107 @@
           "id": {
             "type": "string"
           },
-          "generalDayInformation": {
+          "title": {
             "type": "string"
           },
-          "acquiredKnowledge": {
+          "embedLink": {
             "type": "string"
           },
-          "sessionRating": {
+          "customIFrameStyle": {
+            "type": "boolean"
+          },
+          "metaThumbLink": {
             "type": "string"
           },
-          "gaveHelp": {
+          "metaDescription": {
             "type": "string"
           },
-          "volunteerHours": {
-            "type": "number"
+          "metaDifficulty": {
+            "type": "string",
+            "enum": [
+              "easy",
+              "medium",
+              "difficult"
+            ]
           },
-          "receivedHelp": {
+          "markdown": {
             "type": "string"
           },
-          "pairUpQuestion": {
-            "type": "string"
-          },
-          "extraInformation": {
-            "type": "string"
-          },
-          "user": {
-            "required": [
-              "id",
-              "email",
-              "googleId",
-              "userId"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "projects": {
-                "type": "array",
-                "items": {
+          "bc_keywords": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "bc_modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "point": {
-                "type": "string"
-              },
-              "profile": {
-                "type": "string"
-              },
-              "discordId": {
-                "type": "string"
-              },
-              "googleId": {
-                "type": "string"
-              },
-              "discordAvatar": {
-                "type": "string"
-              },
-              "discordDiscriminator": {
-                "type": "string"
-              },
-              "discordUsername": {
-                "type": "string"
-              },
-              "userId": {
-                "type": "uid"
-              },
-              "time_capsules": {
-                "type": "array",
-                "items": {
+              }
+            }
+          },
+          "bcExercise": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
                   "type": "string"
-                }
-              },
-              "birthday": {
-                "type": "string"
-              },
-              "country": {
-                "type": "string"
-              },
-              "zipCode": {
-                "type": "integer"
-              },
-              "hasAcceptedTermsOfService": {
-                "type": "boolean"
-              },
-              "hasSubscribedEmails": {
-                "type": "boolean"
-              },
-              "interests": {
-                "type": "array",
-                "items": {
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "mc",
+                    "tf"
+                  ]
+                },
+                "exercisePrompt": {
                   "type": "string"
+                },
+                "tfAnswer": {
+                  "type": "boolean"
+                },
+                "bcMCOption": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "mcAnswer": {
+                        "type": "boolean"
+                      },
+                      "mcPrompt": {
+                        "type": "string"
+                      }
+                    }
+                  }
                 }
-              },
-              "idea_cards": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -618,34 +645,86 @@
           }
         }
       },
-      "NewTime-capsule": {
+      "NewBc-module": {
         "properties": {
-          "generalDayInformation": {
+          "title": {
             "type": "string"
           },
-          "acquiredKnowledge": {
+          "embedLink": {
             "type": "string"
           },
-          "sessionRating": {
+          "customIFrameStyle": {
+            "type": "boolean"
+          },
+          "metaThumbLink": {
             "type": "string"
           },
-          "gaveHelp": {
+          "metaDescription": {
             "type": "string"
           },
-          "volunteerHours": {
-            "type": "number"
+          "metaDifficulty": {
+            "type": "string",
+            "enum": [
+              "easy",
+              "medium",
+              "difficult"
+            ]
           },
-          "receivedHelp": {
+          "markdown": {
             "type": "string"
           },
-          "pairUpQuestion": {
-            "type": "string"
+          "bc_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
-          "extraInformation": {
-            "type": "string"
-          },
-          "user": {
-            "type": "string"
+          "bcExercise": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "mc",
+                    "tf"
+                  ]
+                },
+                "exercisePrompt": {
+                  "type": "string"
+                },
+                "tfAnswer": {
+                  "type": "boolean"
+                },
+                "bcMCOption": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "mcAnswer": {
+                        "type": "boolean"
+                      },
+                      "mcPrompt": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",

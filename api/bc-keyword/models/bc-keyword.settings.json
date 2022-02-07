@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bc_keywords",
+  "info": {
+    "name": "bcKeyword"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "bc_modules": {
+      "via": "bc_keywords",
+      "collection": "bc-module"
+    }
+  }
+}

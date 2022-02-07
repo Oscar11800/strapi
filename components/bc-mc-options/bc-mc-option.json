@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_bc_mc_options_bc_mc_options",
+  "info": {
+    "name": "bcMCOption",
+    "icon": "arrows-alt-v"
+  },
+  "options": {},
+  "attributes": {
+    "mcAnswer": {
+      "type": "boolean"
+    },
+    "mcPrompt": {
+      "type": "string"
+    }
+  }
+}
